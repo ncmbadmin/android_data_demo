@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        NCMB.initialize(this, "APP_KEY", "CLIENT_KEY");
+        
+        //**************** APIキーの設定とSDKの初期化 **********************
+        NCMB.initialize(this, "YOUR_APPLICATION_KEY", "YOUR_CLIENT_KEY");
     }
 
     @Override
