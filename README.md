@@ -9,7 +9,8 @@
 Android Studioでボタンが一個アプリを作成し、
 ボタンを押したら、データが保存されます。
 イメージ的は以下のようになります。
-![5554_Nexus_5_API_23.png](https://qiita-image-store.s3.amazonaws.com/0/18698/da334246-9887-de61-c43a-fb086d37cfcb.png)
+
+![画像01](/readme-img/001.png)
 
 
 # 準備
@@ -72,22 +73,19 @@ dependencies {
 # STEP 3. アプリキー設定
 
 * 会員登録（無料）をし、登録ができたらログインをすると下図のように「アプリの新規作成」画面出るのでアプリを作成します
-![003.png](https://qiita-image-store.s3.amazonaws.com/0/18698/366743e0-834f-7f3a-e4f8-0e224f260684.png)
+![画像03](/readme-img/003.png)
 * アプリ作成されると下図のような画面になります
 * この２種類のAPIキー（アプリケーションキーとクライアントキー）は先ほどインポートしたAndroidStudioで作成するAndroidアプリにニフティクラウドmobile backendの紐付けるため、あとで使います.
 
-![004.png](https://qiita-image-store.s3.amazonaws.com/0/18698/19a7c03c-ee30-4273-707c-122d668ee89a.png)
+![画像04](/readme-img/004.png)
 
 この後動作確認でデータが保存される場所も確認しておきましょう
 
-![005.png](https://qiita-image-store.s3.amazonaws.com/0/18698/736ec57c-cd46-18b6-34e9-70d0875ecf53.png)
+![画像05](/readme-img/005.png)
 
 * AndroidStudioでの設定
 
-![MainActivity_java_-_android_data_demo-master_-____Downloads_android_data_demo-master_.png](https://qiita-image-store.s3.amazonaws.com/0/18698/84e4d3dc-2af8-f44d-5eea-3f9296c35fc1.png)
-
-![ニフティクラウドmobile_backend_2.png](https://qiita-image-store.s3.amazonaws.com/0/18698/9d9e4ccf-d126-3023-f8f2-f767d699e7a1.png)
-
+![画像07](/readme-img/007.png)
 
 
 # STEP 4. 確認
@@ -96,7 +94,7 @@ dependencies {
 ![5554_Nexus_5_API_23_3.png](https://qiita-image-store.s3.amazonaws.com/0/18698/da17975f-6bc7-1665-2fbb-f12895088637.png)
 mBaaS側もデータが保存されたことを確認しています！
 
-![ニフティクラウドmobile_backend_7.png](https://qiita-image-store.s3.amazonaws.com/0/18698/b88029ab-f823-7964-2176-aafea0ab7b93.png)
+![画像08](/readme-img/008.png)
 
 
 
