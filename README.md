@@ -83,7 +83,7 @@ dependencies {
 
 ![画像05](/readme-img/005.png)
 
-* AndroidStudioでの設定
+* AndroidStudioでAPIキー（アプリケーションキーとクライアントキー）の設定をします
 
 ![画像07](/readme-img/007.png)
 
