@@ -32,6 +32,7 @@ Android Studioでボタンが一個アプリを作成し、
 * AndroidStudioを開きます、既存プロジェクトを開くことを選択します。
 
 ![5554_Nexus_5_API_23_2.png](https://qiita-image-store.s3.amazonaws.com/0/18698/e6d33cfd-978d-8688-a7ad-de0e9bc90daf.png)
+
 先ほどダウンロードしたプロジェクトを選択し開きます。
 ![androidstudio1.png](https://qiita-image-store.s3.amazonaws.com/0/18698/f1766700-09c9-8b24-b569-997ec9ba5207.png)
 
@@ -83,7 +84,7 @@ dependencies {
 
 ![画像05](/readme-img/005.png)
 
-* AndroidStudioでAPIキー（アプリケーションキーとクライアントキー）の設定をします
+* AndroidStudioでMainActivity.javaにあるAPIキー（アプリケーションキーとクライアントキー）の設定をします
 
 ![画像07](/readme-img/007.png)
 
