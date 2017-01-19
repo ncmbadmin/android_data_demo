@@ -88,6 +88,11 @@ dependencies {
 
 ![画像07](/readme-img/007.png)
 
+* それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
+ * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
+
+* AndroidStudioからビルドする。
+ * 「プロジェクト場所」\app\build\outputs\apk\ ***.apk ファイルが生成される
 
 # STEP 4. 確認
 
