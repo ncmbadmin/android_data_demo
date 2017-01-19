@@ -97,7 +97,9 @@ dependencies {
 # STEP 4. 確認
 
 アプリにてボタンをタブし、保存成功！とメッセージが表示しました。
+
 ![5554_Nexus_5_API_23_3.png](https://qiita-image-store.s3.amazonaws.com/0/18698/da17975f-6bc7-1665-2fbb-f12895088637.png)
+
 mBaaS側もデータが保存されたことを確認しています！
 
 ![画像08](/readme-img/008.png)
