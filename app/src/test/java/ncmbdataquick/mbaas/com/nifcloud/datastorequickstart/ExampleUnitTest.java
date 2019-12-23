@@ -1,4 +1,4 @@
-package ncmbdataquick.mbaas.com.nifty.datastorequickstart;
+package ncmbdataquick.mbaas.com.nifcloud.datastorequickstart;
 
 import org.junit.Test;
 

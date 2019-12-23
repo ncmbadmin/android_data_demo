@@ -1,104 +1,101 @@
-# 【Android】ニフティクラウドmobile backend を体験しよう！
+# 【Android】ニフクラ mobile backend を体験しよう！
 
-* AndroidStudioで作成したAndroidアプリから、[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)へデータ登録を行うサンプアプリです.
- * 「START DEMO」ボタンをタップするとクラウドにデータが上がります★
-* 簡単な操作ですぐに [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を体験いただけます
+![画像2](/readme-img/001.png)
 
-# 作るもの
+## 概要
+* AndroidStudioで作成したAndroidアプリから、[ニフクラ mobile backend](https://mbaas.nifcloud.com/)へデータ登録を行うサンプアプリです
+* アプリを起動して「START DEMO」ボタンをタップするとクラウドにデータを保存できます
+* 簡単な操作ですぐに [ ニフクラ mobile backend ](https://mbaas.nifcloud.com/)の機能を体験いただけます
 
-Android Studioでボタンが一個アプリを作成し、
-ボタンを押したら、データが保存されます。
-イメージ的は以下のようになります。
+##  ニフクラ mobile backend って何？？
+スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！
 
-![画像01](/readme-img/001.png)
+注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 
+## 動作環境
 
-# 準備
+* Android Studio ver. 3.1
+* Android OS ver. 6.0
+* Android SDK v3
 
-* Android Studio
-* mBaaSの[アカウント作成](http://mb.cloud.nifty.com/signup.htm)
+※上記内容で動作確認をしています。
 
-# 手順
+## 手順
+### 1. ニフクラ mobile backend の会員登録・ログインとアプリの新規作成
+* 下記リンクから会員登録（無料）をします
+  * https://console.mbaas.nifcloud.com/signup
+* 登録ができたら下記リンクからログインします
+  * https://console.mbaas.nifcloud.com/
+* 下図のように「アプリの新規作成」画面が出るのでアプリを作成します
+  * 既に mobile backend を利用したことがある方は左上の「＋新しいアプリ」をクリックすると同じ画面が表示されます
 
-* テンプレートプロジェクトをダウンロード
-* SDKを追加（済み・最新SDKを利用したい場合、更新作業として行ってください）
-* アプリ作成し、キーを設定
-* 動作確認
+![画像3](/readme-img/003.png)
 
-# STEP 1. テンプレートプロジェクト
+* アプリ作成されるとAPIキー（アプリケーションキーとクライアントキー）が発行されます
+* この２種類のAPIキーはこの後ダウンロードするサンプルアプリと ニフクラ mobile backend を紐付けるため、あとで使います。
 
-* プロジェクトの[Githubページ](https://github.com/ncmbadmin/android_data_demo)から「Download ZIP」をクリックします。
-* プロジェクトを解凍します
-* AndroidStudioを開きます、既存プロジェクトを開くことを選択します。
+![画像04](/readme-img/004.png)
+
+* ついでに、この後動作確認でデータが保存される場所も確認しておきましょう
+
+![画像05](/readme-img/005.png)
+
+### 2. サンプルプロジェクトのダウンロード
+* 下記リンクをクリックしてプロジェクトをダウンロードします
+ * https://github.com/NIFCloud-mbaas/android_data_demo/archive/master.zip
+* ダウンロードしたプロジェクトを解凍します
+* AndroidStudio を開きます、「Open an existing Android Studio projct」をクリックして解凍したプロジェクトを選択します
 
 ![5554_Nexus_5_API_23_2.png](https://qiita-image-store.s3.amazonaws.com/0/18698/e6d33cfd-978d-8688-a7ad-de0e9bc90daf.png)
 
-先ほどダウンロードしたプロジェクトを選択し開きます。
-![androidstudio1.png](https://qiita-image-store.s3.amazonaws.com/0/18698/f1766700-09c9-8b24-b569-997ec9ba5207.png)
+* プロジェクトが開かれます
 
+![androidstudio1.png](/readme-img/ProjectDesign.png)
 
-# STEP 2. SDKを追加と設定 (済み)
+### 3. SDKの導入（実装済み）
 
-SDKとはニフティクラウドmobile backendが提供している「データストア」「プッシュ通知」などの機能をAndroidからも簡単にコード書ける（数行ぐらい）ライブラリーのものです。
-
-![002.png](https://qiita-image-store.s3.amazonaws.com/0/18698/75b7512c-7dec-9931-b8f6-66f6dd5a73af.png)
-
-mBaaSでは、Android, iOS, Unity, JavaScript SDKを提供しています。
-今回Android SDKの追加し方と設定を紹介します。
-※ダウンロードしたプロジェクトには既に設定済みですが、最新ではない場合、ご自身で入れ替えてください！またご自身のプロジェクトにもSDKを追加したい場合も同じく実装必要です。
+※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.0)<br>　最新版をご利用の場合は入れ替えてご利用ください。
 
 * SDKダウンロード
-SDKはここ（SDK[リリースページ](https://github.com/NIFTYCloud-mbaas/ncmb_android/releases)）から取得してください.
+SDKはここ（[SDK リリースページ](https://github.com/NIFCloud-mbaas/ncmb_android/releases)）から取得してください.
   - NCMB.jarファイルがダウンロードします。
 * SDKをインポート
   - app/libsフォルダにNCMB.jarをコピーします
 * 設定追加
   - app/build.gradleファイルに以下を追加します
-
-```
+```gradle
 dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile files('libs/NCMB.jar')
 }
 ```
   - androidManifestの設定
-
-<application>タグの直前に以下のpermissionを追加します。
-
-```
+    - <application>タグの直前に以下のpermissionを追加します
+```html
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
+### 4. APIキーの設定
 
-# STEP 3. アプリキー設定
+* AndroidStudio で MainActivity.java を開きます
+  * ディレクトリはデフォルトで「Android」が選択されていますので、「Project」に切り替えてから探してください
+![画像09](/readme-img/009.png)
 
-* 会員登録（無料）をし、登録ができたらログインをすると下図のように「アプリの新規作成」画面出るのでアプリを作成します
-![画像03](/readme-img/003.png)
-* アプリ作成されると下図のような画面になります
-* この２種類のAPIキー（アプリケーションキーとクライアントキー）は先ほどインポートしたAndroidStudioで作成するAndroidアプリにニフティクラウドmobile backendの紐付けるため、あとで使います.
-
-![画像04](/readme-img/004.png)
-
-この後動作確認でデータが保存される場所も確認しておきましょう
-
-![画像05](/readme-img/005.png)
-
-* AndroidStudioでMainActivity.javaにあるAPIキー（アプリケーションキーとクライアントキー）の設定をします
+* APIキー（アプリケーションキーとクライアントキー）の設定をします
 
 ![画像07](/readme-img/007.png)
 
-* それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
- * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
+* それぞれ `YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY` の部分を書き換えます
+ * このとき、ダブルクォーテーション（`"`）を消さないように注意してください
 
-* AndroidStudioからビルドする。
- * 「プロジェクト場所」\app\build\outputs\apk\ ***.apk ファイルが生成される
+### 5. 動作確認
 
-# STEP 4. 確認
+* エミュレーターでアプリをビルドします
+  * 失敗する場合は一度「Clean Project」を実行してから再度ビルドしてください
+* エミュレーターが起動したら「START DEMO」ボタンをタップタブし、保存成功！とメッセージが表示しました。
 
-アプリにてボタンをタブし、保存成功！とメッセージが表示しました。
-
-![5554_Nexus_5_API_23_3.png](https://qiita-image-store.s3.amazonaws.com/0/18698/da17975f-6bc7-1665-2fbb-f12895088637.png)
+![5554_Nexus_5_API_23_3.png](/readme-img/5554_Nexus_5_API_23_3.png)
 
 mBaaS側もデータが保存されたことを確認しています！
 
@@ -106,20 +103,19 @@ mBaaS側もデータが保存されたことを確認しています！
 
 
 
-# コード説明
+## コード説明
 
-* SDKおよび必要なライブラリーをインポートします
+### SDKおよび必要なライブラリーのインポート
 
 ```
-import com.nifty.cloud.mb.core.DoneCallback;
-import com.nifty.cloud.mb.core.NCMB;
-import com.nifty.cloud.mb.core.NCMBException;
-import com.nifty.cloud.mb.core.NCMBObject;
+import com.nifcloud.mbaas.core.DoneCallback;
+import com.nifcloud.mbaas.core.NCMB;
+import com.nifcloud.mbaas.core.NCMBException;
+import com.nifcloud.mbaas.core.NCMBObject;
 ```
 
-* SDKを初期化
-
-MainActivityのOnCreateメソッドに実装、ここでAPIキーを渡します。
+### SDKを初期化
+* MainActivity の `OnCreate` メソッド内
 
 ```java
 
@@ -132,61 +128,45 @@ MainActivityのOnCreateメソッドに実装、ここでAPIキーを渡します
     }
 ```
 
-* データを保存する実装
+### データの保存
 
-* mBaaSのAndroid SDKが提供するNCMBObjectクラスがデータストアを操作するためのクラス。データを保存するには、このクラスが提供するsaveInBackgroundメソッドを利用し、保存します。
-* NCMBObjectのインスタンスobjを作成し、"TestClass"を指定することで、データストアにTestClassクラスを操作することができます。
-* インスタンスobjに（キー、バリュー）というふうに、設定します。この場合、"キー"が"message", その"バリュー"が"Hello, NCMB!"として指定しています。
-* saveInBackground()を実施することで、非同期に保存が行われます。非同期実施するため、DoneCallBack()を使って、成功・失敗処理を指定します。
- - 成功する場合、アラートで保存したIDを合わせて表示します。
- - 失敗する場合、アラートでエラーを合わせて表示します。
+* Android SDK が提供する `NCMBObject` クラスは、データストアを操作するためのクラスです
+* データを保存するには、このクラスが提供する `saveInBackground` メソッドを利用します
+* `NCMBObject` のインスタンス `obj` を作成し、クラス名「`"TestClass"`」を設定することで、データストアにデータの保存先クラスである「TestClass」クラスを作成・操作することができます
+* `obj.put(Key, Value)` で、フィールド「Key」に値「Value」を設定します
+* `saveInBackground()` : 保存の実行を行います（非同期処理）
+
 
 ```java
-
-        final NCMBObject obj = new NCMBObject("TestClass");
+final NCMBObject obj = new NCMBObject("TestClass");
+    try {
         obj.put("message", "Hello, NCMB!");
         obj.saveInBackground(new DoneCallback() {
             @Override
             public void done(NCMBException e) {
                 if (e != null) {
                     //保存失敗
-                    new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Notification from Nifty")
-                            .setMessage("Error:" + e.getMessage())
-                            .setPositiveButton("OK", null)
-                            .show();
 
                 } else {
                     //保存成功
-                    new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Notification from Nifty")
-                            .setMessage("Save successfull! with ID:" + obj.getObjectId())
-                            .setPositiveButton("OK", null)
-                            .show();
 
                 }
             }
         });
+    } catch (NCMBException e) {
+        e.printStackTrace();
+    }
 ```
 
-# 参考
+## 参考
+データ保存・データ検索・会員管理・プッシュ通知などの機能を実装したい場合は、以下のドキュメント（Android for Java）もご参照ください。
 
-サンプルコードをカスタマイズすることで、様々な機能を実装できます！
-データ保存・データ検索・会員管理・プッシュ通知などの機能を実装したい場合には、
-以下のドキュメントもご参考ください。
+* [ドキュメント](https://mbaas.nifcloud.com/doc/current/)
+  * [データストア](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_android.html)
+  * [会員管理](https://mbaas.nifcloud.com/doc/current/user/basic_usage_android.html)
+  * [プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)
 
-* [ドキュメント](http://mb.cloud.nifty.com/doc/current/)
-* [ドキュメント・データストア](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_android.html)
-* [ドキュメント・会員管理](http://mb.cloud.nifty.com/doc/current/user/basic_usage_android.html)
-* [ドキュメント・プッシュ通知](http://mb.cloud.nifty.com/doc/current/push/basic_usage_android.html)
-
-# 最後に
-
-データを保存するってサーバを立てたり、自分でサーバ運用とか、設計とか、アプリからサーバーとのやりとりも色々考慮しなければなりません。
-最短方法というのは、このようにmBaaSサービスを使って、運用、設計など自分でやらなくて済む、開発も数行コード書けばいいという便利なものはいかがでしょうか？
-
-# Contributing
-
+## Contributing
 *    Fork it!
 *    Create your feature branch: git checkout -b my-new-feature
 *    Commit your changes: git commit -am 'Add some feature'
@@ -196,4 +176,4 @@ MainActivityのOnCreateメソッドに実装、ここでAPIキーを渡します
 # License
 
     MITライセンス
-    NIFTY Cloud mobile backendのAndroid SDKのライセンス
+    NIFCLOUD mobile backendのAndroid SDKのライセンス
