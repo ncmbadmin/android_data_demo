@@ -1,4 +1,4 @@
-name: Android CI
+name: Firebase Testlab CI
 on: [push]
 
 jobs:
