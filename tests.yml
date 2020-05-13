@@ -1,6 +1,6 @@
 android-pixel-4:
   type: instrumentation
-  app: app-debug.apk
+  app: app/build/outputs/apk/debug/app-debug.apk
   test: app-debug-test.apk
   device:
     - model: flame
