@@ -15,9 +15,9 @@
 
 ## 動作環境
 
-* Android Studio ver. 3.1
-* Android OS ver. 6.0
-* Android SDK v3
+* Macos Mojave version: 10.14.6 (18G103)
+* Android studio: 3.4.1
+* Simulator: Pixel 2 Version: 10
 
 ※上記内容で動作確認をしています。
 
@@ -43,11 +43,11 @@
 
 ### 2. サンプルプロジェクトのダウンロード
 * 下記リンクをクリックしてプロジェクトをダウンロードします
- * https://github.com/NIFCloud-mbaas/android_data_demo/archive/master.zip
+ * https://github.com/NIFCLOUD-mbaas/android_data_demo/archive/master.zip
 * ダウンロードしたプロジェクトを解凍します
-* AndroidStudio を開きます、「Open an existing Android Studio projct」をクリックして解凍したプロジェクトを選択します
+* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します
 
-![5554_Nexus_5_API_23_2.png](https://qiita-image-store.s3.amazonaws.com/0/18698/e6d33cfd-978d-8688-a7ad-de0e9bc90daf.png)
+![5554_Nexus_5_API_23_2.png](/readme-img/android_studio.png)
 
 * プロジェクトが開かれます
 
@@ -55,10 +55,10 @@
 
 ### 3. SDKの導入（実装済み）
 
-※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.0)<br>　最新版をご利用の場合は入れ替えてご利用ください。
+※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.2)<br>　最新版をご利用の場合は入れ替えてご利用ください。
 
 * SDKダウンロード
-SDKはここ（[SDK リリースページ](https://github.com/NIFCloud-mbaas/ncmb_android/releases)）から取得してください.
+SDKはここ（[SDK リリースページ](https://github.com/NIFCLOUD-mbaas/ncmb_android/releases)）から取得してください.
   - NCMB.jarファイルがダウンロードします。
 * SDKをインポート
   - app/libsフォルダにNCMB.jarをコピーします
@@ -66,8 +66,8 @@ SDKはここ（[SDK リリースページ](https://github.com/NIFCloud-mbaas/ncm
   - app/build.gradleファイルに以下を追加します
 ```gradle
 dependencies {
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile files('libs/NCMB.jar')
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation files('libs/NCMB.jar')
 }
 ```
   - androidManifestの設定
@@ -125,7 +125,7 @@ import com.nifcloud.mbaas.core.NCMBObject;
     protected void onCreate(Bundle savedInstanceState) {
        <省略>
         //**************** APIキーの設定とSDKの初期化 **********************
-        NCMB.initialize(this, "YOUR_APPLICATION_KEY", "YOUR_CLIENT_KEY");
+        NCMB.initialize(this.getApplicationContext(), "YOUR_APPLICATION_KEY", "YOUR_CLIENT_KEY");
     }
 ```
 
