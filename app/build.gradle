@@ -15,11 +15,11 @@ devicefarm {
         secretKey envSecretKey
     }
     // Fuzz
-    //fuzz { }
-    appium {
-        tests file("ncmbdataquick.mbaas.com.nifcloud.datastorequickstart.ExecuteUITest") // required
-        useJUnit()
-    }
+    fuzz { }
+//    appium {
+//        tests file("ncmbdataquick.mbaas.com.nifcloud.datastorequickstart.ExecuteUITest") // required
+//        useJUnit()
+//    }
 }
 
 android {
