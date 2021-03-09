@@ -10,12 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: test
-          command: echo ${APPLICATION_KEY}
-       - run:
-          name: test2
-          command: echo $APPLICATION_KEY
-      - run:
           name: Set APPLICATION KEY
           command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/\${APPLICATION_KEY}/g"
       - run:
@@ -27,6 +21,12 @@ jobs:
       - run:
           name: print
           command: cat $(find `pwd` -name "MainActivity.java")
+      - run:
+          name: test
+          command: echo ${APPLICATION_KEY}
+      - run:
+          name: test2
+          command: echo $APPLICATION_KEY
       - run:
           name: Run Tests
           command: ./gradlew lint test
