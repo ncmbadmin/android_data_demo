@@ -9,9 +9,9 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
+      - run:
         name: test
-        command: |
-          echo 'APPLICATION_KEY: '${APPLICATION_KEY}
+        command: echo 'APPLICATION_KEY '${APPLICATION_KEY}
       - run:
           name: Set APPLICATION KEY
           command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/\${APPLICATION_KEY}/g"
