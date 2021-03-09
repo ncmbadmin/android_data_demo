@@ -11,7 +11,7 @@ jobs:
       - checkout
       - - run:
             name: test
-            command: key=$APPLICATION_KEY
+            command: key = ${APPLICATION_KEY}
         - run:
             name: test2
             command: echo $APPLICATION_KEY
