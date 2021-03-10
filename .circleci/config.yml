@@ -2,6 +2,8 @@ version: 2
 
 jobs:
   build:
+    context:
+      - APIKEY
     working_directory: ~/code
     docker:
       - image: circleci/android:api-29
@@ -55,8 +57,3 @@ workflows:
               only:
                 - master
                 - circleci-project-setup
-  my-workflow:
-    jobs:
-      - build:
-          context:
-            - APIKEY
