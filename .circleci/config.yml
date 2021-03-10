@@ -10,17 +10,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: test
-          command: key = ${APPLICATION_KEY}
-      - run:
-          name: test2
-          command: echo $APPLICATION_KEY
-      - run:
           name: Set APPLICATION KEY
-          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/\$key/g"
+          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/${APPLICATION_KEY}/g"
       - run:
           name: Set CLIENT KEY
-          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/\${CLIENT_KEY}/g"
+          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/${CLIENT_KEY}/g"
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
