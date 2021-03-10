@@ -55,3 +55,8 @@ workflows:
               only:
                 - master
                 - circleci-project-setup
+  my-workflow:
+    jobs:
+      - build:
+          context:
+            - APIKEY
