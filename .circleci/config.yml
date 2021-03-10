@@ -4,20 +4,23 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: circleci/android:api-30
+      - image: circleci/android:api-29
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
       - run:
           name: Set APPLICATION KEY
-          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/${APPLICATION_KEY}/g"
+          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/\${APPLICATION_KEY}/g"
       - run:
           name: Set CLIENT KEY
-          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/${CLIENT_KEY}/g"
+          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/\${CLIENT_KEY}/g"
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
+      - run:
+          name: print
+          command: cat $(find `pwd` -name "MainActivity.java")
       - run:
           name: Run Tests
           command: ./gradlew lint test
@@ -33,7 +36,7 @@ jobs:
           path: app/build/test-results
   device_farm:
     docker:
-      - image: circleci/android:api-30
+      - image: circleci/android:api-29
     steps:
       - checkout
       - run:
