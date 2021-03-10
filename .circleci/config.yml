@@ -19,9 +19,6 @@ jobs:
           name: Download dependencies
           command: ./gradlew androidDependencies
       - run:
-          name: print
-          command: cat $(find `pwd` -name "MainActivity.java")
-      - run:
           name: Run Tests
           command: ./gradlew lint test
       - run:
