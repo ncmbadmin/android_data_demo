@@ -2,8 +2,6 @@ version: 2
 
 jobs:
   build:
-    context:
-      - APIKEY
     working_directory: ~/code
     docker:
       - image: circleci/android:api-29
@@ -49,6 +47,8 @@ workflows:
   build_and_test:
     jobs:
       - build
+          context:
+            - APIKEY
       - device_farm:
           requires:
             - build
