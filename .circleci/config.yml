@@ -30,10 +30,8 @@ jobs:
             ./gradlew :app:assembleDebug
             ./gradlew :app:assembleDebugAndroidTest
       - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_test_results:
-          path: app/build/test-results
+          path: app/build/outputs/apk/app-debug.apk
+          destination: app-debug.apk
   device_farm:
     docker:
       - image: circleci/android:api-30
