@@ -41,7 +41,7 @@ jobs:
       - checkout
       - run:
           name: AWS DeviceFarm
-          #command: ./gradlew :app:devicefarmUpload
+          command: ./gradlew :app:devicefarmUpload
 workflows:
   version: 2
   build_and_test:
