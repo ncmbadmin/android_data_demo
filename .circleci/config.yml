@@ -11,10 +11,10 @@ jobs:
       - checkout
       - run:
           name: Set APPLICATION KEY
-          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/"{$APPLICATION_KEY:0:-5}"/g"
+          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/"${APPLICATION_KEY:0:-5}"/g"
       - run:
           name: Set CLIENT KEY
-          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/"{$CLIENT_KEY:0:-5}"/g"
+          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/"${CLIENT_KEY:0:-5}"/g"
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
@@ -41,7 +41,7 @@ jobs:
       - checkout
       - run:
           name: AWS DeviceFarm
-          command: ./gradlew :app:devicefarmUpload
+          #command: ./gradlew :app:devicefarmUpload
 workflows:
   version: 2
   build_and_test:
