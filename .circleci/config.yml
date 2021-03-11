@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: circleci/android:api-29
+      - image: circleci/android:api-30
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
@@ -36,7 +36,7 @@ jobs:
           path: app/build/test-results
   device_farm:
     docker:
-      - image: circleci/android:api-29
+      - image: circleci/android:api-30
     steps:
       - checkout
       - run:
@@ -47,8 +47,6 @@ workflows:
   build_and_test:
     jobs:
       - build:
-          context:
-            - APIKEY
       - device_farm:
           requires:
             - build
