@@ -38,9 +38,6 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/app-release.apk
           destination: app-release.apk
-      - artifacts:
-          # Artifactsで見えるようにするファイル
-          - app/build/outputs/apk/app-debug.apk
   device_farm:
     docker:
       - image: circleci/android:api-30
