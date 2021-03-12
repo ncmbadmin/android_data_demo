@@ -30,8 +30,17 @@ jobs:
             ./gradlew :app:assembleDebug
             ./gradlew :app:assembleDebugAndroidTest
       - store_artifacts:
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file
+      - store_artifacts:
           path: app/build/outputs/apk/app-debug.apk
           destination: app-debug.apk
+      - store_artifacts:
+          path: app/build/outputs/apk/app-release.apk
+          destination: app-release.apk
+      - artifacts:
+          # Artifactsで見えるようにするファイル
+          - app/build/outputs/apk/app-debug.apk
   device_farm:
     docker:
       - image: circleci/android:api-30
@@ -39,7 +48,7 @@ jobs:
       - checkout
       - run:
           name: AWS DeviceFarm
-          command: ./gradlew :app:devicefarmUpload
+          #command: ./gradlew :app:devicefarmUpload
 workflows:
   version: 2
   build_and_test:
