@@ -45,7 +45,8 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - androidbuild
+      - build
+      - androidbuild:
           requires:
             - build
           filters:
