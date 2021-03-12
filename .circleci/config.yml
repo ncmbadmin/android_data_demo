@@ -45,9 +45,8 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-          filters:
-            branches:
-              only:
-                - master
-                - circleci-project-setup
+      filters:
+        branches:
+          only:
+            - master
+            - circleci-project-setup
