@@ -46,8 +46,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-          requires:
-            - build
           filters:
             branches:
               only:
