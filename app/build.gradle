@@ -12,8 +12,7 @@ devicefarm {
         accessKey envAccessKey
         secretKey envSecretKey
     }
-    // Fuzz
-    //fuzz { }
+
     instrumentation { }
 }
 */
