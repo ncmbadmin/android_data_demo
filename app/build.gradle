@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-/*developer
+/*
 apply plugin: 'devicefarm'
 def envAccessKey = ENV_ACCESS_KEY
 def envSecretKey = ENV_SECRET_KEY
@@ -15,7 +15,7 @@ devicefarm {
 
     instrumentation { }
 }
-developer*/
+*/
 
 android {
     compileSdkVersion 30
