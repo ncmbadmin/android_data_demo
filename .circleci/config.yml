@@ -25,8 +25,8 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: print
-          command: cat $(find `pwd` -name "MainActivity.java")
+          name: add Amazon Device Farm setting
+          command: cd app && (cat build.gradle | tr -ds "/*" "*/") > tmp_build.gradle && cat tmp_build.gradle > build.gradle && rm tmp_build.gradle
       - run:
           name: Run Tests
           command: ./gradlew lint test
