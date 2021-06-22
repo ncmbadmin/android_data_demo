@@ -1,6 +1,21 @@
-plugins {
-    id 'com.android.application'
+apply plugin: 'com.android.application'
+
+/*
+apply plugin: 'devicefarm'
+def envAccessKey = ENV_ACCESS_KEY
+def envSecretKey = ENV_SECRET_KEY
+
+devicefarm {
+    projectName "test_android"
+    devicePool "android"
+    authentication {
+        accessKey envAccessKey
+        secretKey envSecretKey
+    }
+
+    instrumentation { }
 }
+*/
 
 android {
     compileSdkVersion 30
@@ -11,7 +26,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

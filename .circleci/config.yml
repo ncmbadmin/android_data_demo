@@ -1,0 +1,55 @@
+version: 2
+
+jobs:
+  buildandroid:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-30
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Set APPLICATION KEY
+          command: grep -l 'YOUR_APPLICATION_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_APPLICATION_KEY/"${APPLICATION_KEY:0:-5}"/g"
+      - run:
+          name: Set CLIENT KEY
+          command: grep -l 'YOUR_CLIENT_KEY' $(find `pwd` -name "MainActivity.java") | xargs sed -i.bak -e "s/YOUR_CLIENT_KEY/"${CLIENT_KEY:0:-5}"/g"
+      - run:
+          name: Download dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: add Amazon Device Farm setting
+          command: cd app && (cat build.gradle | sed 's/\/\*//'| sed 's/\*\///') > tmp_build.gradle && cat tmp_build.gradle > build.gradle && rm tmp_build.gradle
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+      - run:
+          name: Build debug apk and release apk
+          command: |
+            ./gradlew :app:assembleDebug
+            ./gradlew :app:assembleDebugAndroidTest
+      - store_artifacts:
+          path: app/build/outputs/apk/debug/
+          destination: artifact-file
+      - run:
+          name: AWS DeviceFarm
+          command: ./gradlew :app:devicefarmUpload
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - buildandroid:
+          filters:
+            branches:
+              only:
+                - master
+                - circleci-project-setup
+
