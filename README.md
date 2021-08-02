@@ -20,6 +20,7 @@
 
 ※上記内容で動作確認をしています。
 
+
 ## 手順
 ### 1. ニフクラ mobile backend の会員登録・ログインとアプリの新規作成
 * 下記リンクから会員登録（無料）をします
@@ -36,19 +37,19 @@
 
 ![画像04](/readme-img/004.png)
 
-* ついでに、この後動作確認でデータが保存される場所も確認しておきましょう
+* ついでに、この後動作確認でデータが保存される場所も確認しておきましょう。
 
 ![画像05](/readme-img/005.png)
 
 ### 2. サンプルプロジェクトのダウンロード
-* 下記リンクをクリックしてプロジェクトをダウンロードします
+* 下記リンクをクリックしてプロジェクトをダウンロードします。
  * https://github.com/NIFCLOUD-mbaas/android_data_demo/archive/master.zip
-* ダウンロードしたプロジェクトを解凍します
-* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します
+* ダウンロードしたプロジェクトを解凍します。
+* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します。
 
 ![5554_Nexus_5_API_23_2.png](/readme-img/android_studio.png)
 
-* プロジェクトが開かれます
+* プロジェクトが開かれます。
 
 ![androidstudio1.png](/readme-img/ProjectDesign.png)
 
