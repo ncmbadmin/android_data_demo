@@ -1,5 +1,5 @@
 # 【Android】ニフクラ mobile backend を体験しよう！
-
+  
 ![画像2](/readme-img/001.png)
 
 ## 概要
@@ -162,9 +162,9 @@ final NCMBObject obj = new NCMBObject("TestClass");
 データ保存・データ検索・会員管理・プッシュ通知などの機能を実装したい場合は、以下のドキュメント（Android for Java）もご参照ください。
 
 * [ドキュメント](https://mbaas.nifcloud.com/doc/current/)
-  * [データストア](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_android.html)
-  * [会員管理](https://mbaas.nifcloud.com/doc/current/user/basic_usage_android.html)
-  * [プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)
+   * [データストア](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_android.html)
+   * [会員管理](https://mbaas.nifcloud.com/doc/current/user/basic_usage_android.html)
+   * [プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)
 
 ## Contributing
 *    Fork it!
