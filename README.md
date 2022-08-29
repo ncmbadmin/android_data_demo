@@ -44,7 +44,7 @@
 * 下記リンクをクリックしてプロジェクトをダウンロードします
  * https://github.com/NIFCLOUD-mbaas/android_data_demo/archive/master.zip
 * ダウンロードしたプロジェクトを解凍します
-* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します
+* AndroidStudio を開きます、「Open」をクリックして解凍したプロジェクトを選択します
 
 ![5554_Nexus_5_API_23_2.png](/readme-img/android_studio.png)
 
@@ -76,7 +76,7 @@ dependencies{
 
 * AndroidStudio で MainActivity.java を開きます
   * ディレクトリはデフォルトで「Android」が選択されていますので、「Project」に切り替えてから探してください
-![画像09](/readme-img/009.png)
+<img src="d/readme-img/009.png" alt="画像09" width="240"/>
 
 * APIキー（アプリケーションキーとクライアントキー）の設定をします
 
@@ -91,7 +91,7 @@ dependencies{
   * 失敗する場合は一度「Clean Project」を実行してから再度ビルドしてください
 * エミュレーターが起動したら「START DEMO」ボタンをタップタブし、保存成功！とメッセージが表示しました。
 
-![pixel2_api_33.png](/readme-img/pixel2_api_33.png)
+<img src="d/readme-img/pixel2_api_33.png" alt="pixel2_api_33" width="360"/>
 
 mBaaS側もデータが保存されたことを確認しています！
 
