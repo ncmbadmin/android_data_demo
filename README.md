@@ -76,7 +76,7 @@ dependencies{
 
 * AndroidStudio で MainActivity.java を開きます
   * ディレクトリはデフォルトで「Android」が選択されていますので、「Project」に切り替えてから探してください
-<img src="d/readme-img/009.png" alt="画像09" width="240"/>
+<img src="readme-img/009.png" alt="画像09" width="240"/>
 
 * APIキー（アプリケーションキーとクライアントキー）の設定をします
 
@@ -91,7 +91,7 @@ dependencies{
   * 失敗する場合は一度「Clean Project」を実行してから再度ビルドしてください
 * エミュレーターが起動したら「START DEMO」ボタンをタップタブし、保存成功！とメッセージが表示しました。
 
-<img src="d/readme-img/pixel2_api_33.png" alt="pixel2_api_33" width="360"/>
+<img src="readme-img/pixel2_api_33.png" alt="pixel2_api_33" width="360"/>
 
 mBaaS側もデータが保存されたことを確認しています！
 
