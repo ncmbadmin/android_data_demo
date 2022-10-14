@@ -14,9 +14,9 @@
 
 ## 動作環境
 
-* MacOS Bigsur version 11.6 
-* Android Studio Arctic Fox 2020.3.1
-* Pixle 3 - Android 12 (Simulator)
+* MacOS Monterey version 12.5 
+* Android Studio Chipmunk | 2021.2.1 Patch 2
+* Pixle 2 - Android 13 (Simulator)
 
 ※上記内容で動作確認をしています。
 
@@ -44,7 +44,7 @@
 * 下記リンクをクリックしてプロジェクトをダウンロードします
  * https://github.com/NIFCLOUD-mbaas/android_data_demo/archive/master.zip
 * ダウンロードしたプロジェクトを解凍します
-* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します
+* AndroidStudio を開きます、「Open」をクリックして解凍したプロジェクトを選択します
 
 ![5554_Nexus_5_API_23_2.png](/readme-img/android_studio.png)
 
@@ -54,19 +54,15 @@
 
 ### 3. SDKの導入（実装済み）
 
-※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.2)<br>　最新版をご利用の場合は入れ替えてご利用ください。
+※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.4.1.0)<br>　最新版をご利用の場合は入れ替えてご利用ください。
 
 * SDKダウンロード
 SDKはここ（[SDK リリースページ](https://github.com/NIFCLOUD-mbaas/ncmb_android/releases)）から取得してください.
-  - NCMB.jarファイルがダウンロードします。
 * SDKをインポート
-  - app/libsフォルダにNCMB.jarをコピーします
-* 設定追加
-  - app/build.gradleファイルに以下を追加します
+  - app/build.gradleに以下を追加します。
 ```gradle
-dependencies {
-    implementation 'com.google.code.gson:gson:2.3.1'
-    implementation files('libs/NCMB.jar')
+dependencies{
+  implementation 'com.nifcloud.mbaas:ncmb_android:4.1.0'
 }
 ```
   - androidManifestの設定
@@ -80,7 +76,7 @@ dependencies {
 
 * AndroidStudio で MainActivity.java を開きます
   * ディレクトリはデフォルトで「Android」が選択されていますので、「Project」に切り替えてから探してください
-![画像09](/readme-img/009.png)
+<img src="readme-img/009.png" alt="画像09" width="240"/>
 
 * APIキー（アプリケーションキーとクライアントキー）の設定をします
 
@@ -95,7 +91,7 @@ dependencies {
   * 失敗する場合は一度「Clean Project」を実行してから再度ビルドしてください
 * エミュレーターが起動したら「START DEMO」ボタンをタップタブし、保存成功！とメッセージが表示しました。
 
-![5554_Nexus_5_API_23_3.png](/readme-img/5554_Nexus_5_API_23_3.png)
+<img src="readme-img/pixel2_api_33.png" alt="pixel2_api_33" width="360"/>
 
 mBaaS側もデータが保存されたことを確認しています！
 

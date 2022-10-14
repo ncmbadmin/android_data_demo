@@ -18,12 +18,12 @@ devicefarm {
 */
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "ncmbdataquick.mbaas.com.nifcloud.datastorequickstart"
-        minSdkVersion 15
-        targetSdkVersion 30
+        minSdkVersion 26
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -43,5 +43,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation files('libs/NCMB.jar')
+    androidTestImplementation "androidx.test:core:1.5.0-alpha02"
+    implementation 'com.nifcloud.mbaas:ncmb_android:4.1.0'
 }
